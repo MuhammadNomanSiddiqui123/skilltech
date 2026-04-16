@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll Now</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/enroll.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+
+    <a class="navbar-brand" href="#">
+      <img src="../images/bluelogo.jpg" alt="SkillTech Logo">
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="programs.html">Programs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="faculty.html">Faculty</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="admission.html">Online Admission</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="contactus .html">Contact Us</a>
+        </li>
+
+        <li class="nav-item ms-2">
+          <a href="login.html" class="btn btn-login">Login</a>
+          <!-- <button class="btn btn-login">Login</button> -->
+        </li>
+
+         <li class="nav-item ms-2">
+          <a href="signup.html" class="btn btn-login">sign Up</a>
+          <!-- <button class="btn btn-login">Login</button> -->
+        </li>
+
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="enroll-form">
+  <h2>Enroll Now</h2>
+  <form id="enrollForm" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="name">Full Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+    </div>
+    
+    <div class="mb-3">
+      <label for="cnic">CNIC</label>
+      <input type="text" class="form-control" id="cnic" placeholder="xxxxx-xxxxxxx-x" pattern="\d{5}-\d{7}-\d" title="CNIC format: 12345-1234567-1" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="gender">Gender</label>
+      <select class="form-select" id="gender" required>
+        <option value="">--Select Gender--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="dob">Date of Birth</label>
+      <input type="date" class="form-control" id="dob" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="address">Address</label>
+      <textarea class="form-control" id="address" rows="2" placeholder="Enter your address"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="qualification">Qualification / Education</label>
+      <input type="text" class="form-control" id="qualification" placeholder="Enter your qualification" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="program">Select Program</label>
+      <select class="form-select" id="program" required>
+        <option value="">--Choose a Program--</option>
+        <option value="Web">Web Development</option>
+        <option value="Graphic">Graphic Designing</option>
+        <option value="Automation">Office Automation</option>
+        <option value="AI">Advance AI</option>
+        <option value="ChatGPT">ChatGPT</option>
+        <option value="PHP">PHP&Laravel</option>
+        <option value="Python">Phython</option>
+        <option value="Social">Social Media</option>
+        <option value="Tableau">Tableau</option>
+        <option value="Illustrator">UI/UX</option>
+        <option value="excell">Advance excell</option>
+        <option value="Amazon">Amazon FBA</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="documents">Upload Documents / Certificates</label>
+      <input type="file" class="form-control" id="documents" accept=".pdf,.jpg,.png,.doc,.docx" multiple required>
+      <div id="fileList" class="text-muted"></div>
+      <small class="text-muted">Accepted formats: PDF, JPG, PNG, DOC, DOCX</small>
+    </div>
+
+    <div class="mb-3">
+      <label for="message">Additional Notes</label>
+      <textarea class="form-control" id="message" rows="2" placeholder="Any additional info"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-orange">Submit Enrollment</button>
+  </form>
+</div>
+
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background:#222; color:white;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-success">Enrollment Submitted!</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Your enrollment form has been successfully submitted. We will contact you soon.
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-orange" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../javascript/enroll.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+   
+
+    <div class=" footer-section bg-dark text-align pt-5  pb-3 mt-5">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-4 mb-4">
+                <h5 class="footer-logo text-uppercase fw-bold mb-4">Skilltech </h5>
+                 <p class="footer-text"> Transforming beginners Into Silled Professionals Through Expert Guidance And Hands On Learning</p>
+            </div>
+            <div class="col-md-3 mix-auto mb-4">
+                <h5 class="text-uppercase fw-bold mb-4 footer-logo">our services</h5>
+                <ul class="list-unstyled">
+                      <li class="mb-2"> <a href="#!" class="footer-link">Skill Development</a></li>
+                    <li class="mb-2"> <a href="#!" class="footer-link">Career Guidance</a></li>
+                    <li class="mb-2"> <a href="#!" class="footer-link">Real Projects</a></li>
+ <li class="mb-2"> <a href="#!" class="footer-link">Internship Support</a></li>
+
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4 text-center">
+                <h5 class="thanks-heading text-uppercase fw-bold mb-4 footer-logo"> Thank You</h5>
+                <p class="footer-text"> We Are Honoured To Be Part of Your Life</p>
+                <div class="social-icons mt-4">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-pinterest"></i></a>
+
+
+                </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <div class="container-fluid border-top border-secondary mt-4 pt-3 text-center">
+<p class="mb-0 copyright-text">
+    © 2026 <span class="fw-bold footer-logo"> SkillTech Academy</span>
+</p>
+
+    </div>
+    </footer>
+
+</body>
+</html>
